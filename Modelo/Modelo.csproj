@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data_Modelo.cs" />
+    <Compile Include="Modelo_ChangePassword.cs" />
     <Compile Include="Modelo_Contactos.cs" />
     <Compile Include="Modelo_Facturacion.cs" />
     <Compile Include="Modelo_PrimerUso.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Model_Conexion.cs" />
     <Compile Include="Model_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restore_Password.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

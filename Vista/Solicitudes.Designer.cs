@@ -1,7 +1,7 @@
 ﻿
 namespace Vista
 {
-    partial class Solicitudes
+    partial class s
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@ namespace Vista
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Btn_Exit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.CmbUser = new Guna.UI.WinForms.GunaComboBox();
@@ -45,6 +46,8 @@ namespace Vista
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
+            this.DatePickerIngreso = new System.Windows.Forms.DateTimePicker();
+            this.DatePickerInicio = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Btn_Solicitud = new Guna.UI.WinForms.GunaButton();
@@ -52,9 +55,9 @@ namespace Vista
             this.Register_Solicitud = new Guna.UI.WinForms.GunaButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Txt_ID = new Guna.UI.WinForms.GunaTextBox();
-            this.DatePickerInicio = new System.Windows.Forms.DateTimePicker();
-            this.DatePickerIngreso = new System.Windows.Forms.DateTimePicker();
-            this.Btn_Exit = new System.Windows.Forms.Button();
+            this.BtnSeacrh = new Guna.UI.WinForms.GunaButton();
+            this.TxtBusqueda = new Guna.UI.WinForms.GunaTextBox();
+            this.ReloadGrid = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.gunaGroupBox1.SuspendLayout();
@@ -70,6 +73,20 @@ namespace Vista
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1325, 40);
             this.panel1.TabIndex = 4;
+            // 
+            // Btn_Exit
+            // 
+            this.Btn_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(51)))), ((int)(((byte)(52)))));
+            this.Btn_Exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_Exit.FlatAppearance.BorderSize = 0;
+            this.Btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Exit.Image = global::Vista.Properties.Resources.minimizar_signo1;
+            this.Btn_Exit.Location = new System.Drawing.Point(1285, 0);
+            this.Btn_Exit.Name = "Btn_Exit";
+            this.Btn_Exit.Size = new System.Drawing.Size(40, 40);
+            this.Btn_Exit.TabIndex = 1;
+            this.Btn_Exit.UseVisualStyleBackColor = false;
+            this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
             // 
             // label3
             // 
@@ -88,7 +105,7 @@ namespace Vista
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label12.Location = new System.Drawing.Point(36, 92);
+            this.label12.Location = new System.Drawing.Point(36, 111);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(135, 18);
             this.label12.TabIndex = 62;
@@ -105,7 +122,7 @@ namespace Vista
             this.CmbUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbUser.ForeColor = System.Drawing.Color.Black;
             this.CmbUser.FormattingEnabled = true;
-            this.CmbUser.Location = new System.Drawing.Point(29, 126);
+            this.CmbUser.Location = new System.Drawing.Point(29, 145);
             this.CmbUser.Name = "CmbUser";
             this.CmbUser.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.CmbUser.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -119,7 +136,7 @@ namespace Vista
             this.Lbl_Estado.AutoSize = true;
             this.Lbl_Estado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Estado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Lbl_Estado.Location = new System.Drawing.Point(36, 397);
+            this.Lbl_Estado.Location = new System.Drawing.Point(36, 312);
             this.Lbl_Estado.Name = "Lbl_Estado";
             this.Lbl_Estado.Size = new System.Drawing.Size(164, 18);
             this.Lbl_Estado.TabIndex = 64;
@@ -136,7 +153,7 @@ namespace Vista
             this.CmbEstadoSolicitud.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbEstadoSolicitud.ForeColor = System.Drawing.Color.Black;
             this.CmbEstadoSolicitud.FormattingEnabled = true;
-            this.CmbEstadoSolicitud.Location = new System.Drawing.Point(29, 432);
+            this.CmbEstadoSolicitud.Location = new System.Drawing.Point(29, 356);
             this.CmbEstadoSolicitud.Name = "CmbEstadoSolicitud";
             this.CmbEstadoSolicitud.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.CmbEstadoSolicitud.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -211,7 +228,7 @@ namespace Vista
             this.gunaGroupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGroupBox1.ForeColor = System.Drawing.SystemColors.Control;
             this.gunaGroupBox1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
-            this.gunaGroupBox1.Location = new System.Drawing.Point(407, 93);
+            this.gunaGroupBox1.Location = new System.Drawing.Point(412, 66);
             this.gunaGroupBox1.Name = "gunaGroupBox1";
             this.gunaGroupBox1.Radius = 5;
             this.gunaGroupBox1.Size = new System.Drawing.Size(429, 265);
@@ -269,13 +286,33 @@ namespace Vista
             this.gunaGroupBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGroupBox2.ForeColor = System.Drawing.SystemColors.Control;
             this.gunaGroupBox2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
-            this.gunaGroupBox2.Location = new System.Drawing.Point(860, 93);
+            this.gunaGroupBox2.Location = new System.Drawing.Point(865, 66);
             this.gunaGroupBox2.Name = "gunaGroupBox2";
             this.gunaGroupBox2.Radius = 5;
             this.gunaGroupBox2.Size = new System.Drawing.Size(433, 265);
             this.gunaGroupBox2.TabIndex = 76;
             this.gunaGroupBox2.Text = "Fechas de Registro";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // DatePickerIngreso
+            // 
+            this.DatePickerIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DatePickerIngreso.Location = new System.Drawing.Point(42, 194);
+            this.DatePickerIngreso.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
+            this.DatePickerIngreso.MinDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
+            this.DatePickerIngreso.Name = "DatePickerIngreso";
+            this.DatePickerIngreso.Size = new System.Drawing.Size(338, 25);
+            this.DatePickerIngreso.TabIndex = 83;
+            // 
+            // DatePickerInicio
+            // 
+            this.DatePickerInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DatePickerInicio.Location = new System.Drawing.Point(42, 99);
+            this.DatePickerInicio.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
+            this.DatePickerInicio.MinDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
+            this.DatePickerInicio.Name = "DatePickerInicio";
+            this.DatePickerInicio.Size = new System.Drawing.Size(338, 25);
+            this.DatePickerInicio.TabIndex = 82;
             // 
             // label7
             // 
@@ -306,13 +343,14 @@ namespace Vista
             this.Btn_Solicitud.BackColor = System.Drawing.Color.Transparent;
             this.Btn_Solicitud.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.Btn_Solicitud.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Solicitud.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Solicitud.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Btn_Solicitud.FocusedColor = System.Drawing.Color.Empty;
             this.Btn_Solicitud.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Solicitud.ForeColor = System.Drawing.Color.White;
             this.Btn_Solicitud.Image = null;
             this.Btn_Solicitud.ImageSize = new System.Drawing.Size(20, 20);
-            this.Btn_Solicitud.Location = new System.Drawing.Point(1026, 500);
+            this.Btn_Solicitud.Location = new System.Drawing.Point(1009, 356);
             this.Btn_Solicitud.Name = "Btn_Solicitud";
             this.Btn_Solicitud.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.Btn_Solicitud.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -333,13 +371,14 @@ namespace Vista
             this.Btn_Eliminar.BackColor = System.Drawing.Color.Transparent;
             this.Btn_Eliminar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.Btn_Eliminar.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Eliminar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Btn_Eliminar.FocusedColor = System.Drawing.Color.Empty;
             this.Btn_Eliminar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Eliminar.ForeColor = System.Drawing.Color.White;
             this.Btn_Eliminar.Image = null;
             this.Btn_Eliminar.ImageSize = new System.Drawing.Size(20, 20);
-            this.Btn_Eliminar.Location = new System.Drawing.Point(1172, 500);
+            this.Btn_Eliminar.Location = new System.Drawing.Point(1155, 356);
             this.Btn_Eliminar.Name = "Btn_Eliminar";
             this.Btn_Eliminar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.Btn_Eliminar.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -360,13 +399,14 @@ namespace Vista
             this.Register_Solicitud.BackColor = System.Drawing.Color.Transparent;
             this.Register_Solicitud.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.Register_Solicitud.BorderColor = System.Drawing.Color.Black;
+            this.Register_Solicitud.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Register_Solicitud.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Register_Solicitud.FocusedColor = System.Drawing.Color.Empty;
             this.Register_Solicitud.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Register_Solicitud.ForeColor = System.Drawing.Color.White;
             this.Register_Solicitud.Image = null;
             this.Register_Solicitud.ImageSize = new System.Drawing.Size(20, 20);
-            this.Register_Solicitud.Location = new System.Drawing.Point(793, 500);
+            this.Register_Solicitud.Location = new System.Drawing.Point(776, 356);
             this.Register_Solicitud.Name = "Register_Solicitud";
             this.Register_Solicitud.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.Register_Solicitud.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -402,7 +442,7 @@ namespace Vista
             this.Txt_ID.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.Txt_ID.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.Txt_ID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Txt_ID.Location = new System.Drawing.Point(29, 328);
+            this.Txt_ID.Location = new System.Drawing.Point(29, 66);
             this.Txt_ID.Name = "Txt_ID";
             this.Txt_ID.PasswordChar = '\0';
             this.Txt_ID.Radius = 5;
@@ -411,46 +451,96 @@ namespace Vista
             this.Txt_ID.TabIndex = 81;
             this.Txt_ID.Visible = false;
             // 
-            // DatePickerInicio
+            // BtnSeacrh
             // 
-            this.DatePickerInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DatePickerInicio.Location = new System.Drawing.Point(42, 99);
-            this.DatePickerInicio.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
-            this.DatePickerInicio.MinDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
-            this.DatePickerInicio.Name = "DatePickerInicio";
-            this.DatePickerInicio.Size = new System.Drawing.Size(338, 25);
-            this.DatePickerInicio.TabIndex = 82;
+            this.BtnSeacrh.AnimationHoverSpeed = 0.07F;
+            this.BtnSeacrh.AnimationSpeed = 0.03F;
+            this.BtnSeacrh.BackColor = System.Drawing.Color.Transparent;
+            this.BtnSeacrh.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.BtnSeacrh.BorderColor = System.Drawing.Color.Black;
+            this.BtnSeacrh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSeacrh.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnSeacrh.FocusedColor = System.Drawing.Color.Empty;
+            this.BtnSeacrh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSeacrh.ForeColor = System.Drawing.Color.White;
+            this.BtnSeacrh.Image = null;
+            this.BtnSeacrh.ImageSize = new System.Drawing.Size(20, 20);
+            this.BtnSeacrh.Location = new System.Drawing.Point(1031, 505);
+            this.BtnSeacrh.Name = "BtnSeacrh";
+            this.BtnSeacrh.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.BtnSeacrh.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BtnSeacrh.OnHoverForeColor = System.Drawing.Color.White;
+            this.BtnSeacrh.OnHoverImage = null;
+            this.BtnSeacrh.OnPressedColor = System.Drawing.Color.Black;
+            this.BtnSeacrh.Radius = 10;
+            this.BtnSeacrh.Size = new System.Drawing.Size(97, 40);
+            this.BtnSeacrh.TabIndex = 83;
+            this.BtnSeacrh.Text = "Buscar";
+            this.BtnSeacrh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnSeacrh.Click += new System.EventHandler(this.BtnSeacrh_Click);
             // 
-            // DatePickerIngreso
+            // TxtBusqueda
             // 
-            this.DatePickerIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DatePickerIngreso.Location = new System.Drawing.Point(42, 194);
-            this.DatePickerIngreso.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
-            this.DatePickerIngreso.MinDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
-            this.DatePickerIngreso.Name = "DatePickerIngreso";
-            this.DatePickerIngreso.Size = new System.Drawing.Size(338, 25);
-            this.DatePickerIngreso.TabIndex = 83;
+            this.TxtBusqueda.BackColor = System.Drawing.Color.Transparent;
+            this.TxtBusqueda.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.TxtBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.TxtBusqueda.BorderSize = 1;
+            this.TxtBusqueda.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtBusqueda.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.TxtBusqueda.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.TxtBusqueda.FocusedForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.TxtBusqueda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBusqueda.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.TxtBusqueda.Location = new System.Drawing.Point(546, 505);
+            this.TxtBusqueda.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.TxtBusqueda.Name = "TxtBusqueda";
+            this.TxtBusqueda.Padding = new System.Windows.Forms.Padding(5);
+            this.TxtBusqueda.PasswordChar = '\0';
+            this.TxtBusqueda.Radius = 10;
+            this.TxtBusqueda.SelectedText = "";
+            this.TxtBusqueda.Size = new System.Drawing.Size(477, 40);
+            this.TxtBusqueda.TabIndex = 85;
+            this.TxtBusqueda.Text = "Search...";
+            this.TxtBusqueda.Enter += new System.EventHandler(this.TxtBusqueda_Enter);
+            this.TxtBusqueda.Leave += new System.EventHandler(this.TxtBusqueda_Leave);
             // 
-            // Btn_Exit
+            // ReloadGrid
             // 
-            this.Btn_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(51)))), ((int)(((byte)(52)))));
-            this.Btn_Exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_Exit.FlatAppearance.BorderSize = 0;
-            this.Btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Exit.Image = global::Vista.Properties.Resources.minimizar_signo1;
-            this.Btn_Exit.Location = new System.Drawing.Point(1285, 0);
-            this.Btn_Exit.Name = "Btn_Exit";
-            this.Btn_Exit.Size = new System.Drawing.Size(40, 40);
-            this.Btn_Exit.TabIndex = 1;
-            this.Btn_Exit.UseVisualStyleBackColor = false;
-            this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
+            this.ReloadGrid.AnimationHoverSpeed = 0.07F;
+            this.ReloadGrid.AnimationSpeed = 0.03F;
+            this.ReloadGrid.BackColor = System.Drawing.Color.Transparent;
+            this.ReloadGrid.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.ReloadGrid.BorderColor = System.Drawing.Color.Black;
+            this.ReloadGrid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReloadGrid.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.ReloadGrid.FocusedColor = System.Drawing.Color.Empty;
+            this.ReloadGrid.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReloadGrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.ReloadGrid.Image = null;
+            this.ReloadGrid.ImageSize = new System.Drawing.Size(20, 20);
+            this.ReloadGrid.Location = new System.Drawing.Point(1134, 505);
+            this.ReloadGrid.Name = "ReloadGrid";
+            this.ReloadGrid.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.ReloadGrid.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.ReloadGrid.OnHoverForeColor = System.Drawing.Color.White;
+            this.ReloadGrid.OnHoverImage = null;
+            this.ReloadGrid.OnPressedColor = System.Drawing.Color.Black;
+            this.ReloadGrid.Radius = 10;
+            this.ReloadGrid.Size = new System.Drawing.Size(164, 40);
+            this.ReloadGrid.TabIndex = 86;
+            this.ReloadGrid.Text = "Recargar Grid";
+            this.ReloadGrid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ReloadGrid.Click += new System.EventHandler(this.ReloadGrid_Click);
             // 
-            // Solicitudes
+            // s
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(1325, 840);
+            this.Controls.Add(this.ReloadGrid);
+            this.Controls.Add(this.TxtBusqueda);
+            this.Controls.Add(this.BtnSeacrh);
             this.Controls.Add(this.Txt_ID);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Btn_Solicitud);
@@ -469,8 +559,8 @@ namespace Vista
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Solicitudes";
-            this.Text = "Solicitueds";
+            this.Name = "s";
+            this.Text = "s";
             this.Load += new System.EventHandler(this.Solicitudes_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -512,5 +602,8 @@ namespace Vista
         private Guna.UI.WinForms.GunaTextBox Txt_ID;
         private System.Windows.Forms.DateTimePicker DatePickerInicio;
         private System.Windows.Forms.DateTimePicker DatePickerIngreso;
+        private Guna.UI.WinForms.GunaTextBox TxtBusqueda;
+        public Guna.UI.WinForms.GunaButton BtnSeacrh;
+        public Guna.UI.WinForms.GunaButton ReloadGrid;
     }
 }

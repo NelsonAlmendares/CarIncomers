@@ -29,6 +29,8 @@ namespace Vista
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,10 +41,11 @@ namespace Vista
             this.Txt_password = new Guna.UI.WinForms.GunaTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.LinkPassword = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Btn_Login = new Guna.UI.WinForms.GunaButton();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -91,6 +94,7 @@ namespace Vista
             this.button2.Size = new System.Drawing.Size(40, 40);
             this.button2.TabIndex = 4;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Btn_Exit
             // 
@@ -156,6 +160,7 @@ namespace Vista
             this.Txt_password.SelectedText = "";
             this.Txt_password.Size = new System.Drawing.Size(457, 43);
             this.Txt_password.TabIndex = 13;
+            this.Txt_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_password_KeyPress);
             // 
             // label1
             // 
@@ -181,17 +186,19 @@ namespace Vista
             this.label2.TabIndex = 15;
             this.label2.Text = "Password:";
             // 
-            // linkLabel1
+            // LinkPassword
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(86)))), ((int)(((byte)(242)))));
-            this.linkLabel1.Location = new System.Drawing.Point(377, 398);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(144, 17);
-            this.linkLabel1.TabIndex = 16;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "I forgot my password";
+            this.LinkPassword.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.LinkPassword.AutoSize = true;
+            this.LinkPassword.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(86)))), ((int)(((byte)(242)))));
+            this.LinkPassword.Location = new System.Drawing.Point(377, 398);
+            this.LinkPassword.Name = "LinkPassword";
+            this.LinkPassword.Size = new System.Drawing.Size(144, 17);
+            this.LinkPassword.TabIndex = 16;
+            this.LinkPassword.TabStop = true;
+            this.LinkPassword.Text = "I forgot my password";
+            this.LinkPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkPassword_LinkClicked);
             // 
             // label4
             // 
@@ -244,6 +251,12 @@ namespace Vista
             this.Btn_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Btn_Login.Click += new System.EventHandler(this.Btn_Login_Click);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,7 +266,7 @@ namespace Vista
             this.Controls.Add(this.Btn_Login);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.LinkPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Txt_password);
@@ -265,6 +278,7 @@ namespace Vista
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login_KeyPress);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -285,9 +299,10 @@ namespace Vista
         private Guna.UI.WinForms.GunaTextBox Txt_password;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel LinkPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private Guna.UI.WinForms.GunaButton Btn_Login;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 using Common.cache;
 using Controller;
+using System.Data.SqlClient;
 
 namespace Vista
 {
-    public partial class Solicitudes : Form
+    public partial class s : Form
     {
-        public Solicitudes()
+        public s()
         {
             InitializeComponent();
         }
@@ -33,6 +36,11 @@ namespace Vista
                 CmbEstadoSolicitud.Visible = false;
                 LoadGridCliente();
                 dataGridView.Hide();
+
+                // Deshabilitamos las busquedas de los datos a este nivel de Usuario
+                TxtBusqueda.Visible = false;
+                BtnSeacrh.Visible = false;
+                ReloadGrid.Visible = false;
 
                 // Cargamos el ComboBox de Usuario con el dato que se toma desde el Login
                 ShowUserClienteLogin();
@@ -314,6 +322,65 @@ namespace Vista
             Register_Solicitud.Enabled = false;
             Btn_Solicitud.Enabled = true;
             Btn_Eliminar.Enabled = true;
+        }
+
+        void SearchData()
+        {
+            string Search = TxtBusqueda.Text;
+            ShowData.Busqueda = TxtBusqueda.Text;
+            int match = ShowData.CheckingMatch(Search);
+
+            if (match != 0)
+            {
+                dataGridView.DataSource = ShowData.SearchData(Search);
+            }            
+            else if (match == 0)
+            {
+                MessageBox.Show("No se encontratron coincidencias en los registros", "DATOS NO ENCONTRADOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowGrid();
+            }
+            else if (TxtBusqueda.Text == "")
+            {
+                MessageBox.Show("Debes ingresar datos en la barra de busqueda", "INGRESAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ShowGrid();
+            }
+            else
+            {
+                dataGridView.DataSource = ShowData.SearchData(Search);
+            }
+
+            
+        }
+
+        private void TxtBusqueda_Enter(object sender, EventArgs e)
+        {
+            // Maneja el evento GotFocus para limpiar el texto predeterminado cuando el usuario hace clic en el TextBox
+            if (TxtBusqueda.Text == "Search...")
+            {
+                TxtBusqueda.Text = string.Empty;
+                TxtBusqueda.ForeColor = SystemColors.WindowText; // Restaura el color del texto
+            }
+        }
+
+        private void TxtBusqueda_Leave(object sender, EventArgs e)
+        {
+            // Maneja el evento LostFocus para restaurar el texto predeterminado si el usuario no ha ingresado nada
+            if (string.IsNullOrWhiteSpace(TxtBusqueda.Text))
+            {
+                TxtBusqueda.Text = "Search...";
+                TxtBusqueda.ForeColor = SystemColors.GrayText; // Cambia el color del texto predeterminado
+            }
+        }
+
+        private void BtnSeacrh_Click(object sender, EventArgs e)
+        {
+            SearchData();
+        }
+
+        private void ReloadGrid_Click(object sender, EventArgs e)
+        {
+            ShowGrid();
+            TxtBusqueda.ResetText();
         }
     }
 }

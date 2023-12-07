@@ -25,10 +25,11 @@ namespace Controller
         public int TipoUsuario { get; set; }
         public int EstadoUsuario { get; set; }
         public string Usuario { get; set; }
+        public string Correo { get; set; }
 
         public int Add_Data() 
         {
-            return Modelo_Usuario.InsertData(Nombre, Apellido, Documento, Password, Edad, Telefono, Celular, Licencia, Fecha, TipoUsuario, EstadoUsuario, Usuario);
+            return Modelo_Usuario.InsertData(Nombre, Apellido, Documento, Password, Edad, Telefono, Celular, Licencia, Fecha, TipoUsuario, EstadoUsuario, Usuario, Correo);
         }
         public DataTable ShowData()
         {

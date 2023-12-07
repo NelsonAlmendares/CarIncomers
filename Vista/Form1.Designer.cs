@@ -34,6 +34,7 @@ namespace Vista
             this.button1 = new System.Windows.Forms.Button();
             this.Btn_Exit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnPerfil = new Guna.UI.WinForms.GunaButton();
             this.BtnSession = new Guna.UI.WinForms.GunaButton();
             this.Btn_Reingreso = new Guna.UI.WinForms.GunaButton();
             this.Btn_Contactos = new Guna.UI.WinForms.GunaButton();
@@ -47,7 +48,6 @@ namespace Vista
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.PanelStatsMain = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,10 +58,11 @@ namespace Vista
             this.label4 = new System.Windows.Forms.Label();
             this.Lbl_Saludo = new System.Windows.Forms.Label();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -72,8 +73,8 @@ namespace Vista
             this.PanelStatsMain.SuspendLayout();
             this.gunaElipsePanel2.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
+            this.gunaElipsePanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.gunaElipsePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +101,7 @@ namespace Vista
             this.button2.Size = new System.Drawing.Size(40, 40);
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -131,6 +133,7 @@ namespace Vista
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.BtnPerfil);
             this.panel2.Controls.Add(this.BtnSession);
             this.panel2.Controls.Add(this.Btn_Reingreso);
             this.panel2.Controls.Add(this.Btn_Contactos);
@@ -149,6 +152,33 @@ namespace Vista
             this.panel2.Size = new System.Drawing.Size(264, 924);
             this.panel2.TabIndex = 3;
             // 
+            // BtnPerfil
+            // 
+            this.BtnPerfil.AnimationHoverSpeed = 0.07F;
+            this.BtnPerfil.AnimationSpeed = 0.03F;
+            this.BtnPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPerfil.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.BtnPerfil.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.BtnPerfil.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnPerfil.FocusedColor = System.Drawing.Color.Empty;
+            this.BtnPerfil.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPerfil.ForeColor = System.Drawing.Color.White;
+            this.BtnPerfil.Image = global::Vista.Properties.Resources.User;
+            this.BtnPerfil.ImageSize = new System.Drawing.Size(22, 22);
+            this.BtnPerfil.Location = new System.Drawing.Point(12, 257);
+            this.BtnPerfil.Name = "BtnPerfil";
+            this.BtnPerfil.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.BtnPerfil.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.BtnPerfil.OnHoverForeColor = System.Drawing.Color.White;
+            this.BtnPerfil.OnHoverImage = null;
+            this.BtnPerfil.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.BtnPerfil.Radius = 5;
+            this.BtnPerfil.Size = new System.Drawing.Size(239, 50);
+            this.BtnPerfil.TabIndex = 25;
+            this.BtnPerfil.Text = "Mi Perfil";
+            this.BtnPerfil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnPerfil.Click += new System.EventHandler(this.BtnPerfil_Click);
+            // 
             // BtnSession
             // 
             this.BtnSession.AnimationHoverSpeed = 0.07F;
@@ -161,15 +191,16 @@ namespace Vista
             this.BtnSession.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSession.ForeColor = System.Drawing.Color.White;
             this.BtnSession.Image = global::Vista.Properties.Resources.cerrar_sesion;
-            this.BtnSession.ImageSize = new System.Drawing.Size(24, 24);
-            this.BtnSession.Location = new System.Drawing.Point(33, 846);
+            this.BtnSession.ImageSize = new System.Drawing.Size(26, 26);
+            this.BtnSession.Location = new System.Drawing.Point(23, 846);
             this.BtnSession.Name = "BtnSession";
             this.BtnSession.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.BtnSession.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.BtnSession.OnHoverForeColor = System.Drawing.Color.White;
             this.BtnSession.OnHoverImage = null;
             this.BtnSession.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.BtnSession.Size = new System.Drawing.Size(203, 50);
+            this.BtnSession.Radius = 5;
+            this.BtnSession.Size = new System.Drawing.Size(208, 50);
             this.BtnSession.TabIndex = 24;
             this.BtnSession.Text = "Cerrar Sesión";
             this.BtnSession.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -186,9 +217,9 @@ namespace Vista
             this.Btn_Reingreso.FocusedColor = System.Drawing.Color.Empty;
             this.Btn_Reingreso.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Reingreso.ForeColor = System.Drawing.Color.White;
-            this.Btn_Reingreso.Image = global::Vista.Properties.Resources.Payment1;
-            this.Btn_Reingreso.ImageSize = new System.Drawing.Size(20, 20);
-            this.Btn_Reingreso.Location = new System.Drawing.Point(12, 495);
+            this.Btn_Reingreso.Image = global::Vista.Properties.Resources.repeat_regular_24;
+            this.Btn_Reingreso.ImageSize = new System.Drawing.Size(27, 27);
+            this.Btn_Reingreso.Location = new System.Drawing.Point(12, 542);
             this.Btn_Reingreso.Name = "Btn_Reingreso";
             this.Btn_Reingreso.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.Btn_Reingreso.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -212,9 +243,9 @@ namespace Vista
             this.Btn_Contactos.FocusedColor = System.Drawing.Color.Empty;
             this.Btn_Contactos.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Contactos.ForeColor = System.Drawing.Color.White;
-            this.Btn_Contactos.Image = global::Vista.Properties.Resources.User;
-            this.Btn_Contactos.ImageSize = new System.Drawing.Size(20, 20);
-            this.Btn_Contactos.Location = new System.Drawing.Point(12, 383);
+            this.Btn_Contactos.Image = global::Vista.Properties.Resources.contact_solid_24;
+            this.Btn_Contactos.ImageSize = new System.Drawing.Size(24, 24);
+            this.Btn_Contactos.Location = new System.Drawing.Point(12, 428);
             this.Btn_Contactos.Name = "Btn_Contactos";
             this.Btn_Contactos.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.Btn_Contactos.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -257,14 +288,14 @@ namespace Vista
             this.Btn_registroVehiculo.AnimationSpeed = 0.03F;
             this.Btn_registroVehiculo.BackColor = System.Drawing.Color.Transparent;
             this.Btn_registroVehiculo.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.Btn_registroVehiculo.BorderColor = System.Drawing.Color.Black;
+            this.Btn_registroVehiculo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.Btn_registroVehiculo.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Btn_registroVehiculo.FocusedColor = System.Drawing.Color.Empty;
             this.Btn_registroVehiculo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_registroVehiculo.ForeColor = System.Drawing.Color.White;
             this.Btn_registroVehiculo.Image = global::Vista.Properties.Resources.Icon1;
             this.Btn_registroVehiculo.ImageSize = new System.Drawing.Size(20, 20);
-            this.Btn_registroVehiculo.Location = new System.Drawing.Point(12, 271);
+            this.Btn_registroVehiculo.Location = new System.Drawing.Point(12, 314);
             this.Btn_registroVehiculo.Name = "Btn_registroVehiculo";
             this.Btn_registroVehiculo.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.Btn_registroVehiculo.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -288,9 +319,9 @@ namespace Vista
             this.Btn_Facturacion.FocusedColor = System.Drawing.Color.Empty;
             this.Btn_Facturacion.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Facturacion.ForeColor = System.Drawing.Color.White;
-            this.Btn_Facturacion.Image = global::Vista.Properties.Resources.Payment1;
-            this.Btn_Facturacion.ImageSize = new System.Drawing.Size(20, 20);
-            this.Btn_Facturacion.Location = new System.Drawing.Point(12, 439);
+            this.Btn_Facturacion.Image = global::Vista.Properties.Resources.credit_card_solid_24;
+            this.Btn_Facturacion.ImageSize = new System.Drawing.Size(26, 26);
+            this.Btn_Facturacion.Location = new System.Drawing.Point(12, 485);
             this.Btn_Facturacion.Name = "Btn_Facturacion";
             this.Btn_Facturacion.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.Btn_Facturacion.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -314,9 +345,9 @@ namespace Vista
             this.Btn_Vehiculo.FocusedColor = System.Drawing.Color.Empty;
             this.Btn_Vehiculo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Vehiculo.ForeColor = System.Drawing.Color.White;
-            this.Btn_Vehiculo.Image = global::Vista.Properties.Resources.List1;
-            this.Btn_Vehiculo.ImageSize = new System.Drawing.Size(20, 20);
-            this.Btn_Vehiculo.Location = new System.Drawing.Point(12, 215);
+            this.Btn_Vehiculo.Image = global::Vista.Properties.Resources.car_garage_solid_24;
+            this.Btn_Vehiculo.ImageSize = new System.Drawing.Size(25, 25);
+            this.Btn_Vehiculo.Location = new System.Drawing.Point(12, 200);
             this.Btn_Vehiculo.Name = "Btn_Vehiculo";
             this.Btn_Vehiculo.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.Btn_Vehiculo.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -341,8 +372,8 @@ namespace Vista
             this.Btn_Solicitud.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Solicitud.ForeColor = System.Drawing.Color.White;
             this.Btn_Solicitud.Image = global::Vista.Properties.Resources.Calendar1;
-            this.Btn_Solicitud.ImageSize = new System.Drawing.Size(20, 20);
-            this.Btn_Solicitud.Location = new System.Drawing.Point(12, 159);
+            this.Btn_Solicitud.ImageSize = new System.Drawing.Size(25, 25);
+            this.Btn_Solicitud.Location = new System.Drawing.Point(12, 144);
             this.Btn_Solicitud.Name = "Btn_Solicitud";
             this.Btn_Solicitud.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.Btn_Solicitud.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -366,9 +397,9 @@ namespace Vista
             this.Btn_registroUsuario.FocusedColor = System.Drawing.Color.Empty;
             this.Btn_registroUsuario.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_registroUsuario.ForeColor = System.Drawing.Color.White;
-            this.Btn_registroUsuario.Image = global::Vista.Properties.Resources.User;
-            this.Btn_registroUsuario.ImageSize = new System.Drawing.Size(20, 20);
-            this.Btn_registroUsuario.Location = new System.Drawing.Point(12, 327);
+            this.Btn_registroUsuario.Image = global::Vista.Properties.Resources.user_plus_solid_24;
+            this.Btn_registroUsuario.ImageSize = new System.Drawing.Size(30, 30);
+            this.Btn_registroUsuario.Location = new System.Drawing.Point(12, 371);
             this.Btn_registroUsuario.Name = "Btn_registroUsuario";
             this.Btn_registroUsuario.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.Btn_registroUsuario.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -414,25 +445,6 @@ namespace Vista
             this.label3.TabIndex = 6;
             this.label3.Text = "Dashboard";
             // 
-            // gunaTextBox1
-            // 
-            this.gunaTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.gunaTextBox1.Location = new System.Drawing.Point(309, 19);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(473, 37);
-            this.gunaTextBox1.TabIndex = 7;
-            this.gunaTextBox1.Text = "Search";
-            // 
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.Transparent;
@@ -472,7 +484,7 @@ namespace Vista
             this.elementHost1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.elementHost1.Location = new System.Drawing.Point(16, 299);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(525, 262);
+            this.elementHost1.Size = new System.Drawing.Size(516, 262);
             this.elementHost1.TabIndex = 18;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = this.cartesianChart1;
@@ -529,6 +541,7 @@ namespace Vista
             // 
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(29)))));
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.gunaElipsePanel1.Controls.Add(this.gunaElipsePanel5);
             this.gunaElipsePanel1.Controls.Add(this.gunaElipsePanel3);
             this.gunaElipsePanel1.Controls.Add(this.pictureBox2);
             this.gunaElipsePanel1.Controls.Add(this.label5);
@@ -537,40 +550,29 @@ namespace Vista
             this.gunaElipsePanel1.Size = new System.Drawing.Size(268, 810);
             this.gunaElipsePanel1.TabIndex = 16;
             // 
+            // gunaElipsePanel5
+            // 
+            this.gunaElipsePanel5.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.gunaElipsePanel5.Controls.Add(this.pictureBox4);
+            this.gunaElipsePanel5.Controls.Add(this.label8);
+            this.gunaElipsePanel5.Controls.Add(this.label6);
+            this.gunaElipsePanel5.Location = new System.Drawing.Point(12, 308);
+            this.gunaElipsePanel5.Margin = new System.Windows.Forms.Padding(2);
+            this.gunaElipsePanel5.Name = "gunaElipsePanel5";
+            this.gunaElipsePanel5.Size = new System.Drawing.Size(246, 128);
+            this.gunaElipsePanel5.TabIndex = 20;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.pictureBox4.Image = global::Vista.Properties.Resources.rayo;
-            this.pictureBox4.Location = new System.Drawing.Point(44, 41);
+            this.pictureBox4.Location = new System.Drawing.Point(57, 61);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(34, 34);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 23;
             this.pictureBox4.TabStop = false;
-            // 
-            // gunaElipsePanel3
-            // 
-            this.gunaElipsePanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.gunaElipsePanel3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.gunaElipsePanel3.Controls.Add(this.pictureBox4);
-            this.gunaElipsePanel3.Controls.Add(this.label6);
-            this.gunaElipsePanel3.Controls.Add(this.label8);
-            this.gunaElipsePanel3.Location = new System.Drawing.Point(13, 301);
-            this.gunaElipsePanel3.Name = "gunaElipsePanel3";
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(242, 102);
-            this.gunaElipsePanel3.TabIndex = 22;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
-            this.label6.Location = new System.Drawing.Point(20, 11);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 19);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Program Status:";
             // 
             // label8
             // 
@@ -578,11 +580,33 @@ namespace Vista
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.label8.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(12)))));
-            this.label8.Location = new System.Drawing.Point(84, 38);
+            this.label8.Location = new System.Drawing.Point(87, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(109, 37);
             this.label8.TabIndex = 19;
             this.label8.Text = "Good!";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.label6.Location = new System.Drawing.Point(14, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 19);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Program Status:";
+            // 
+            // gunaElipsePanel3
+            // 
+            this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.gunaElipsePanel3.Location = new System.Drawing.Point(12, 446);
+            this.gunaElipsePanel3.Margin = new System.Windows.Forms.Padding(2);
+            this.gunaElipsePanel3.Name = "gunaElipsePanel3";
+            this.gunaElipsePanel3.Size = new System.Drawing.Size(246, 146);
+            this.gunaElipsePanel3.TabIndex = 19;
             // 
             // pictureBox2
             // 
@@ -614,7 +638,6 @@ namespace Vista
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(1618, 924);
             this.Controls.Add(this.MainPanel);
-            this.Controls.Add(this.gunaTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -635,9 +658,9 @@ namespace Vista
             this.gunaElipsePanel2.PerformLayout();
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
+            this.gunaElipsePanel5.ResumeLayout(false);
+            this.gunaElipsePanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.gunaElipsePanel3.ResumeLayout(false);
-            this.gunaElipsePanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -651,7 +674,6 @@ namespace Vista
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private LiveCharts.WinForms.CartesianChart cartesianChart;
         private Guna.UI.WinForms.GunaButton Btn_registroUsuario;
@@ -676,10 +698,12 @@ namespace Vista
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel3;
+        private Guna.UI.WinForms.GunaButton BtnPerfil;
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel5;
     }
 }
 

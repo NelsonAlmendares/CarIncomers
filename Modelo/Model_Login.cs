@@ -33,10 +33,14 @@ namespace Modelo
                 {
                     while (reader.Read()) {
                         UserLoginCache.ID = reader.GetInt32(0);
+                        UserLoginCache.Usuario = reader.GetString(1);
                         UserLoginCache.Nombre = reader.GetString(3);
                         UserLoginCache.TipoUsuario = reader.GetString(4);
                         UserLoginCache.Telefono = reader.GetString(5);
                         UserLoginCache.Celular = reader.GetString(6);
+                        UserLoginCache.EstadoUsuario = reader.GetString(7);
+                        UserLoginCache.Documento = reader.GetString(8);
+                        UserLoginCache.Correo = reader.GetString(10);
                     }
                     response = true;
                 }

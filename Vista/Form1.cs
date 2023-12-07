@@ -115,7 +115,7 @@ namespace Vista
 
         private void Btn_Solicitud_Click(object sender, EventArgs e)
         {
-            Solicitudes Add_Solicitud = new Solicitudes();
+            s Add_Solicitud = new s();
             Add_Solicitud.TopLevel = false;
             MainPanel.Controls.Add(Add_Solicitud);
             Add_Solicitud.Dock = DockStyle.Fill;
@@ -182,6 +182,16 @@ namespace Vista
             PanelStatsMain.SendToBack();
         }
 
+        private void BtnPerfil_Click(object sender, EventArgs e)
+        {
+            Perfil Open_Profile = new Perfil();
+            Open_Profile.TopLevel = false;
+            MainPanel.Controls.Add(Open_Profile);
+            Open_Profile.Dock = DockStyle.Fill;
+            Open_Profile.Show();
+            PanelStatsMain.SendToBack();
+        }
+
         private void BtnSession_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Desea salir del Sistema?", "TERMINAR SESIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -194,6 +204,11 @@ namespace Vista
             {
                 MessageBox.Show("Continúe con la sesión actual", "Car Income System", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

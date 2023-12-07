@@ -20,6 +20,7 @@ namespace Controller
         public string Fecha_Fin { get; set; }
         public string Hora_Inicio { get; set; }
         public string Hora_Fin { get; set; }
+        public string Busqueda { get; set; }
 
         public bool InsertData ()
         {
@@ -66,6 +67,15 @@ namespace Controller
         public DataTable LoadEstadoSolicituddInnerController(string Solicitud)
         {
             return Modelo_Solicitud.LoadEstadoSolicitudInner(Solicitud);
+        }
+
+        public DataTable SearchData(string Busqueda)
+        {
+            return Modelo_Solicitud.SearchData(Busqueda);
+        }
+        public int CheckingMatch (string Busqueda)
+        {
+            return Modelo_Solicitud.CheckMatch(Busqueda);
         }
     }
 }

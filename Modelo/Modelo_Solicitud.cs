@@ -66,6 +66,45 @@ namespace Modelo
             }
         }
 
+        public static int CheckMatch (string param) 
+        {
+            int RowCount;
+            try
+            {
+                string Query = "SELECT * FROM Select_Solicitud WHERE [Cliente Solicitante] LIKE @param OR Vehiculo LIKE @param OR [Estado de la Solicitud] LIKE @param;";
+                SqlCommand Search = new SqlCommand(Query, Model_Conexion.Connect());
+                Search.Parameters.AddWithValue("@param", "%" + param + "%");
+                RowCount = Convert.ToInt32(Search.ExecuteScalar());
+                return RowCount;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error at: " + ex);
+                return 0;
+            }
+        }
+
+        public static DataTable SearchData (string param)
+        {
+            DataTable Data;
+            try
+            {
+                string Query = "SELECT * FROM Select_Solicitud WHERE [Cliente Solicitante] LIKE @param OR Vehiculo LIKE @param OR [Estado de la Solicitud] LIKE @param;";
+                SqlCommand Search = new SqlCommand(Query, Model_Conexion.Connect());
+                Search.Parameters.AddWithValue("@param", "%" + param + "%");
+
+                SqlDataAdapter ADP = new SqlDataAdapter(Search);
+                Data = new DataTable();
+                ADP.Fill(Data);
+                return Data;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error at: " + ex);
+                return null;
+            }
+        }
+
         // Con este método lleno el ComboBox con el nombre del usuario que se obtiene con el Cache del Login
         public static DataTable LoadUserFromLogin()
         {
@@ -193,6 +232,5 @@ namespace Modelo
                 return null;
             }
         }
-
     }
 }

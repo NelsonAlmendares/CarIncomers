@@ -53,9 +53,10 @@ namespace Vista
             Txt_Documento.ResetText();
             Txt_password.ResetText();
             Txt_edad.ResetText();
-            Txt_telefono.ResetText();
+            Txt_correo.ResetText();
             Txt_celular.ResetText();
             Txt_licencia.ResetText();
+            Txt_correo.ResetText();
         }
 
         void LoadUser() 
@@ -65,7 +66,9 @@ namespace Vista
 
         void InsertData()
         {
-            if (Txt_Nombre.Text == "" || Txt_Apellido.Text == "" || Txt_Usuario.Text == "" || Txt_password.Text == "" || Txt_telefono.Text == "" || Txt_celular.Text == "" || Txt_Documento.Text == "" || Txt_edad.Text == "" || Txt_licencia.Text == "")
+            if (Txt_Nombre.Text == "" || Txt_Apellido.Text == "" || Txt_Usuario.Text == "" || Txt_password.Text == "" || 
+                Txt_correo.Text == "" || Txt_celular.Text == "" || Txt_Documento.Text == "" || Txt_edad.Text == "" 
+                || Txt_licencia.Text == "" || Txt_correo.Text == "")
             {
                 MessageBox.Show("Todos los campos deben estar llenos", "CAMPOS VACÍOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -78,13 +81,14 @@ namespace Vista
                 Insert_User.Documento = Txt_Documento.Text;
                 Insert_User.Password = Txt_password.Text;
                 Insert_User.Edad = Convert.ToInt32(Txt_edad.Text);
-                Insert_User.Telefono = Txt_telefono.Text;
+                Insert_User.Telefono = Txt_correo.Text;
                 Insert_User.Celular = Txt_celular.Text;
                 Insert_User.Licencia = Txt_licencia.Text;
                 Insert_User.Fecha = DateFormat;
                 Insert_User.EstadoUsuario = Convert.ToInt32(CmbEstadoUser.SelectedValue);
                 Insert_User.TipoUsuario = Convert.ToInt32(CmbTipoUser.SelectedValue);
                 Insert_User.Usuario = Txt_Usuario.Text;
+                Insert_User.Correo = Txt_correo.Text;
                 int response = Insert_User.Add_Data();
                 if (response > 0)
                 {
@@ -103,7 +107,7 @@ namespace Vista
             LoadUser();
             LoadTipoUser();
             LoadEstadoUser();
-            Txt_telefono.MaxLength = 12;
+            Txt_correo.MaxLength = 12;
             Txt_celular.MaxLength = 12;
             Txt_Documento.MaxLength = 10;
             Txt_licencia.MaxLength = 10;

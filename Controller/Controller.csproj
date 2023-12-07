@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller_ChangePassword.cs" />
     <Compile Include="Controller_Conexion.cs" />
     <Compile Include="Controller_Contactos.cs" />
     <Compile Include="Controller_Facturacion.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Controller_PrimerUso.cs" />
     <Compile Include="Controller_RegsitroVehiculo.cs" />
     <Compile Include="Controller_Reingreso.cs" />
+    <Compile Include="Controller_Restore_Password.cs" />
     <Compile Include="Controller_Solicitud.cs" />
     <Compile Include="Controller_Usuario.cs" />
     <Compile Include="Data_Controller.cs" />
