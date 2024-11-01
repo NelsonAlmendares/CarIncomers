@@ -248,7 +248,6 @@ C:\Users\nelso\OneDrive\Escritorio\CarIncomers\Vista\bin\Debug\Vista.exe
 C:\Users\nelso\OneDrive\Escritorio\CarIncomers\Vista\bin\Debug\Vista.pdb
 C:\Users\nelso\OneDrive\Escritorio\CarIncomers\Vista\bin\Debug\Common.dll
 C:\Users\nelso\OneDrive\Escritorio\CarIncomers\Vista\bin\Debug\Controller.dll
-C:\Users\nelso\OneDrive\Escritorio\CarIncomers\Vista\bin\Debug\Guna.UI.dll
 C:\Users\nelso\OneDrive\Escritorio\CarIncomers\Vista\bin\Debug\LiveCharts.dll
 C:\Users\nelso\OneDrive\Escritorio\CarIncomers\Vista\bin\Debug\LiveCharts.WinForms.dll
 C:\Users\nelso\OneDrive\Escritorio\CarIncomers\Vista\bin\Debug\LiveCharts.Wpf.dll

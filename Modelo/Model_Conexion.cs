@@ -18,7 +18,7 @@ namespace Modelo
                 server = "DESKTOP-SUBCSB2";
                 database = "CarIncome";
                 user = "NelsonAlmendares";
-                pwd = "sujose";
+                pwd = "sujose14";
 
                 // Creamos la cadena de conexión con la base de datos
                 string ConnetionSql = "Data Source= " + server + ";Initial Catalog= " + database + ";User ID=" + user + ";Password=" + pwd + ";";
